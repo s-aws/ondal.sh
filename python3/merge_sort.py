@@ -1,3 +1,10 @@
+""" I don't usually like wikipedia but one section from: https://en.wikipedia.org/wiki/Merge_sort really helped me understand.
+
+    To help understand this, consider an array with two elements. The elements are copied to B[], then merged back to A[].
+    If there are four elements, when the bottom of the recursion level is reached, single element runs from A[] are merged to B[],
+    and then at the next higher level of recursion, those two-element runs are merged to A[]. This pattern continues with each level
+    of recursion."""
+
 def merge_sort(value):
     def get_left_right_segments(length):
         if length % 2:
