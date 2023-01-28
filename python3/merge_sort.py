@@ -24,15 +24,14 @@ def merge_sort(value):
     work = []
 
     while True:
-        if not len(left) or not len(right):
-            work.extend(left if len(left) else right)
-            break
-        else:
+        if len(left) and len(right):
             if left[0] < right[0]:
                 work.append(left.pop(0))
             else:
                 work.append(right.pop(0))
-
+        else:
+            work.extend(left if len(left) else right)
+            break
     return work
 
 print(merge_sort([7, 11, 22, 80, 44, 6, 9, 2, 1, 4, 13, 13, 13]))
