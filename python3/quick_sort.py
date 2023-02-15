@@ -39,10 +39,10 @@ def quick_sort(value, pivot=None, max_count=None, insert_pos=0):
     if pos_movement > 1:
         quick_sort(value, value[insert_pos], pos_movement, insert_pos)
 
-    noop = count - pivot_pos - pivot_count
-    if noop > 1:
+    noop_count = count - pivot_pos - pivot_count
+    if noop_count > 1:
         noop_insert_pos = pivot_pos + pivot_count
-        quick_sort(value, value[noop_insert_pos], noop, noop_insert_pos)
+        quick_sort(value, value[noop_insert_pos], noop_count, noop_insert_pos)
 
 foo = [13, 7, 11, 22, 13, 80, 44, 6, 9, 2, 1, 4, 13, 7, 11, 22, 13, 80, 44, 6, 9, 2, 1, 4, 13, 7, 11, 22, 13, 80, 44, 6, 9, 2, 1, 4, 13]
 answer = [1, 1, 1, 2, 2, 2, 4, 4, 4, 6, 6, 6, 7, 7, 7, 9, 9, 9, 11, 11, 11, 13, 13, 13, 13, 13, 13, 13, 22, 22, 22, 44, 44, 44, 80, 80, 80]
