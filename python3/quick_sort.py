@@ -39,7 +39,7 @@ def quick_sort(value, pivot=None, max_count=None, insert_pos=0):
     if pos_movement > 1:
         quick_sort(value, value[insert_pos], pos_movement, insert_pos)
 
-    noop = count - pivot_pos + pivot_count
+    noop = count - pivot_pos - pivot_count
     if noop > 1:
         noop_insert_pos = pivot_pos + pivot_count
         quick_sort(value, value[noop_insert_pos], noop, noop_insert_pos)
