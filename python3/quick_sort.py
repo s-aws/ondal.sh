@@ -22,7 +22,6 @@ def quick_sort(value, pivot=None, max_count=None, insert_pos=0):
     else:
         max_count += insert_pos
 
-    noop = 0
     count = insert_pos
     pivot_pos = insert_pos
     pivot_count = 0
@@ -34,14 +33,13 @@ def quick_sort(value, pivot=None, max_count=None, insert_pos=0):
         elif value[count] == pivot:
             pivot_count += 1
             value.insert(pivot_pos, value.pop(count))
-        else:
-            noop += 1
         count += 1
 
     pos_movement = pivot_pos - insert_pos
     if pos_movement > 1:
         quick_sort(value, value[insert_pos], pos_movement, insert_pos)
 
+    noop = count - pivot_pos + pivot_count
     if noop > 1:
         noop_insert_pos = pivot_pos + pivot_count
         quick_sort(value, value[noop_insert_pos], noop, noop_insert_pos)
